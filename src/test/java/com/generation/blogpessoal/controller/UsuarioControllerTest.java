@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
@@ -18,7 +17,7 @@ import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.repository.UsuarioRepository;
 import com.generation.blogpessoal.service.UsuarioService;
 
-@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UsuarioControllerTest {
 
@@ -78,11 +77,19 @@ public class UsuarioControllerTest {
     @DisplayName("Atualizar um Usuário")
     public void deveAtualizarUmUsuario() {
 
-        Optional<Usuario> usuarioCadastrado = usuarioService.cadastrarUsuario(new Usuario(0L,
-                "Maria Julia", "ma_ju@email.com", "maju123", "https://i.imgur.com/yDRVeK7.jpg"));
+        Optional<Usuario> usuarioCadastrado = usuarioService.cadastrarUsuario(new Usuario(
+                0L,
+                "Maria Julia",
+                "ma_ju@email.com",
+                "maju1234",
+                "https://i.imgur.com/yDRVeK7.jpg"));
 
-        Usuario usuarioUpdate = new Usuario(usuarioCadastrado.get().getId(),
-                "Maria Julia Ramos", "maju_ramos@email.com.br", "maju123" , "https://i.imgur.com/yDRVeK7.jpg");
+        Usuario usuarioUpdate = new Usuario(
+                 usuarioCadastrado.get().getId(),
+                "Maria Julia Ramos",
+                "maju_ramos@email.com.br",
+                "maju1234",
+                "https://i.imgur.com/yDRVeK7.jpg");
 
         HttpEntity<Usuario> corpoRequisicao = new HttpEntity<Usuario>(usuarioUpdate);
 

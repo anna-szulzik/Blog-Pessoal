@@ -1,5 +1,6 @@
 package com.generation.blogpessoal.repository;
 
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -29,11 +30,11 @@ public class UsuarioRepositoryTest {
 
         usuarioRepository.deleteAll();
 
-        usuarioRepository.save(new Usuario(0L, "Nicole Mota", "nic.mota@email.com.br", "13465278", "https://i.imgur.com/NtyGneo.jpg"));
+        usuarioRepository.save(new Usuario(0L, "Nicole Mota Silva", "nic.mota@email.com.br", "13465278", "https://i.imgur.com/NtyGneo.jpg"));
 
-        usuarioRepository.save(new Usuario(0L, "Victor Alves", "victor_alves17@email.com", "13465278", "https://i.imgur.com/FETvs2O.jpg"));
+        usuarioRepository.save(new Usuario(0L, "Victor Alves Silva", "victor_alves17@email.com", "13465278", "https://i.imgur.com/FETvs2O.jpg"));
 
-        usuarioRepository.save(new Usuario(0L, "Ingrid Ramos", "ingrid.bramos@email.com.br", "13465278", "https://i.imgur.com/mB3VM2N.jpg"));
+        usuarioRepository.save(new Usuario(0L, "Ingrid Ramos Silva", "ingrid.bramos@email.com.br", "13465278", "https://i.imgur.com/mB3VM2N.jpg"));
 
         usuarioRepository.save(new Usuario(0L, "Bruno Nunes", "bruno_nunes9@email.com", "13465278", "https://i.imgur.com/JR7kUFU.jpg"));
 
@@ -56,9 +57,9 @@ public class UsuarioRepositoryTest {
 
         assertEquals(3, listaDeUsuarios.size());
 
-        assertTrue(listaDeUsuarios.get(0).getNome().equals("Nicole Mota"));
-        assertTrue(listaDeUsuarios.get(1).getNome().equals("Victor Alves"));
-        assertTrue(listaDeUsuarios.get(2).getNome().equals("Ingrid ramos"));
+        assertTrue(listaDeUsuarios.get(0).getNome().equals("Nicole Mota Silva"));
+        assertTrue(listaDeUsuarios.get(1).getNome().equals("Victor Alves Silva"));
+        assertTrue(listaDeUsuarios.get(2).getNome().equals("Ingrid Ramos Silva"));
 
     }
 
